@@ -123,7 +123,7 @@ Correr el notebook celda por celda con `Shift+Enter` para validar que las 8 tabl
 3. Asignar un nombre descriptivo (ej: `uber-data-project`) → **Crear**
 4. Confirmar que el proyecto nuevo esté seleccionado antes de continuar
 
-<img src="docs/instances.png">
+<img src="docs/Instances.png">
 
 ### 2.2 Habilitar facturación
 
