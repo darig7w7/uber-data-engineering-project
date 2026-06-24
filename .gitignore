@@ -1,0 +1,11 @@
+data/uber_data.csv
+*.json
+io_config.yaml
+venv/
+env/
+.env
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
