@@ -102,14 +102,8 @@ source venv/bin/activate   # Linux/Mac/WSL
 pip install pandas numpy jupyter notebook
 ```
 
-### 1.4 Descargar dataset y notebook
 
-```bash
-wget https://raw.githubusercontent.com/darshilparmar/uber-etl-pipeline-data-engineering-project/main/data/uber_data.csv
-wget "https://raw.githubusercontent.com/darshilparmar/uber-etl-pipeline-data-engineering-project/main/Uber%20Data%20Pipeline%20(Video%20Version).ipynb"
-```
-
-### 1.5 Levantar Jupyter y explorar el notebook
+### 1.4 Levantar Jupyter y explorar el notebook
 
 ```bash
 jupyter notebook
