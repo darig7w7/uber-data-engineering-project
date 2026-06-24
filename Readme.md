@@ -41,7 +41,6 @@ Crear un servicio "Data Analytics para transporte":
 
 - **Fuente:** TLC Trip Record Data — Yellow Taxi, marzo 2016
 - **Archivo:** `uber_data.csv` (100.000 filas, 19 columnas)
-- **Descarga:** https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project/blob/main/data/uber_data.csv
 - **Documentación oficial TLC:** https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
 ---
