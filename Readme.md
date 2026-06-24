@@ -7,7 +7,7 @@ Proyecto de ingeniería de datos basado en el tutorial de Darshil Parmar. Proces
 
 ## Arquitectura general
 
-<img src="docs/Arquitectura.jpg">
+<img src="docs/Arquitectura.png">
 
 ---
 
