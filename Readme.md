@@ -1,5 +1,6 @@
 # Uber Data Engineering Project
 ### End-to-End ETL Pipeline con GCP, Mage, BigQuery y Looker Studio
+<img src="docs/Cover.png">
 
 Proyecto de ingeniería de datos basado en el tutorial de Darshil Parmar. Procesa datos de viajes de taxi de NYC (Yellow Taxi, marzo 2016) aplicando un modelo dimensional (esquema en estrella) para análisis en BigQuery y visualización en Looker Studio.
 
@@ -467,7 +468,15 @@ La solución debe minimizar procesos manuales y permitir actualizaciones automá
 
 <img src="docs/uber_looker2.png">
 
-  
+**Descripcion del mapa de calor**
+
+Lo que representa el mapa es la densidad geográfica de los puntos de inicio de los viajes de taxi del dataset (marzo 2016, NYC), usando las columnas pickup_latitude y pickup_longitude de la tabla tbl_analytics.
+La escala de colores te dice la concentración de viajes:
+
+Rojo/naranja (centro caliente): zona con la mayor cantidad de pickups. Ese punto rojo intenso está sobre Midtown Manhattan / Lower Manhattan — que es exactamente lo esperado, ya que es la zona de mayor demanda de taxis en NYC (Penn Station, Times Square, Grand Central, zonas de oficinas).
+Verde claro: zonas con actividad moderada, que corresponden a los barrios de Queens, Brooklyn, Bronx y algunas zonas del norte como White Plains y New Rochelle (probablemente aeropuertos como JFK y LaGuardia).
+Puntos verdes aislados: pickups esporádicos en zonas suburbanas de New Jersey y Long Island.
+
 ## Referencias
 
 - Video tutorial original: https://www.youtube.com/watch?v=WpQECq5Hx9g
