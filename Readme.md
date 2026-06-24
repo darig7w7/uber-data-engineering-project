@@ -7,25 +7,7 @@ Proyecto de ingeniería de datos basado en el tutorial de Darshil Parmar. Proces
 
 ## Arquitectura general
 
-```
-uber_data.csv
-     │
-     ▼
-Google Cloud Storage (bucket)
-     │
-     ▼
-Mage AI (VM en Compute Engine)
- ├── Data Loader   → lee el CSV desde GCS
- ├── Transformer   → aplica el modelo dimensional (Python/pandas)
- └── Data Exporter → escribe las 8 tablas en BigQuery
-     │
-     ▼
-BigQuery (data warehouse)
- └── analytics_query.sql → tabla tbl_analytics (JOIN de todas las dimensiones)
-     │
-     ▼
-Looker Studio (dashboard)
-```
+<img src="Arquitectura.png">
 
 ---
 
