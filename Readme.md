@@ -211,6 +211,9 @@ La primera ejecución descarga la imagen de Mage (puede tardar varios minutos). 
 
 ### 3.4 Acceder a Mage desde el navegador
 
+<img src="Mage_login.png">
+
+
 Obtener la IP externa de la VM desde la consola de GCP (columna "IP externa") y abrir en el navegador:
 
 ```
@@ -280,6 +283,9 @@ Agregar **Transformer → Python** conectado al Data Loader, con el código de `
 > **Importante:** crear este bloque usando el botón **"+"** que aparece directamente sobre el bloque del Transformer en la vista **Tree** (canvas), NO desde el menú de bloques de la parte inferior. Esto garantiza que la conexión entre bloques quede configurada correctamente desde el principio, evitando problemas de routing en el pipeline.
 
 Seleccionar **Data Exporter → Python → Generic** y usar el código de `mage-files/export.py`, reemplazando `PROJECT_ID` con el ID real del proyecto GCP.
+
+<img src="Mage_interface.png">
+
 
 ### 5.5 Verificar conexiones en `metadata.yaml`
 
