@@ -16,16 +16,27 @@ Proyecto de ingeniería de datos basado en el tutorial de Darshil Parmar. Proces
 Muchas empresas de taxis, colectivos, delivery o transporte privado tienen datos pero no saben:
 
 ¿Cuáles son sus rutas más rentables?
+
 ¿En qué horarios hay mayor demanda?
+
 ¿Qué conductores generan más ingresos?
+
 ¿Dónde pierden dinero?
+
 ### Solución:
+
 Crear un servicio "Data Analytics para transporte":
+
 **Fuente de datos**
-GPS de vehículos
-Aplicación móvil de conductores
-Sistema de pagos
-Registro de viajes
+
+- GPS de vehículos
+
+- Aplicación móvil de conductores
+
+- Sistema de pagos
+
+- Registro de viajes
+
 ## Dataset
 
 - **Fuente:** TLC Trip Record Data — Yellow Taxi, marzo 2016
