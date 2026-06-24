@@ -123,6 +123,8 @@ Correr el notebook celda por celda con `Shift+Enter` para validar que las 8 tabl
 3. Asignar un nombre descriptivo (ej: `uber-data-project`) → **Crear**
 4. Confirmar que el proyecto nuevo esté seleccionado antes de continuar
 
+<img src="docs/instances.png">
+
 ### 2.2 Habilitar facturación
 
 Necesario para usar Cloud Storage, Compute Engine y BigQuery. Google ofrece $300 de crédito gratuito por 90 días para cuentas nuevas. La verificación pide datos de tarjeta pero no realiza cobros automáticos salvo que se active manualmente una cuenta paga al terminar el período de prueba.
@@ -143,6 +145,8 @@ Necesario para usar Cloud Storage, Compute Engine y BigQuery. Google ofrece $300
 2. ID del conjunto de datos: `uber_data_engineering`
 3. Ubicación: **`US (multiple regions in United States)`** — debe coincidir con el bucket
 4. Hacer clic en **Crear conjunto de datos**
+
+<img src="docs/BigQuery.png">
 
 ### 2.5 Crear Service Account (credenciales para Mage)
 
@@ -367,6 +371,7 @@ CREATE OR REPLACE TABLE `tu-project-id.uber_data_engineering.tbl_analytics` AS (
    - Métricas: promedio de `fare_amount`, suma de `total_amount`
 6. Compartir: botón **"Compartir"** → generar enlace público
 
+<img src="docs/uber_looker.png">
 ---
 
 ## Estructura del repositorio
@@ -403,27 +408,7 @@ sudo docker stop $(sudo docker ps -q --filter ancestor=mageai/mageai)
 # Compute Engine → Instancias de VM → Seleccionar instancia → "Detener"
 ```
 
-### Para retomar
 
-```bash
-# 1. Iniciar la VM desde la consola de GCP → botón "Iniciar"
-# 2. Conectarse por SSH
-# 3. Verificar el estado del contenedor:
-sudo docker ps -a
-
-# Si está detenido (Exited):
-sudo docker start NOMBRE_CONTENEDOR
-
-# Si fue eliminado, recrearlo:
-cd ~
-sudo docker run -it -p 6789:6789 \
-  -v $(pwd)/uber_project:/home/src/uber_project \
-  mageai/mageai mage start uber_project
-
-# 4. Obtener la nueva IP externa desde la consola de GCP
-#    (puede cambiar con cada reinicio de la VM)
-# 5. Abrir en el navegador: http://IP_EXTERNA:6789
-```
 
 ---
 
@@ -441,10 +426,50 @@ sudo docker run -it -p 6789:6789 \
 | Looker Studio | Visualización y dashboard final |
 
 ---
+## Caso de negocio: Plataforma de analítica para optimización de transporte
+### Necesidad de negocio
 
+La empresa de transporte necesita contar con una solución de análisis centralizada que permita transformar los datos históricos de viajes en información estratégica para mejorar la operación. Actualmente requiere conocer el comportamiento de la demanda, rentabilidad de los servicios, desempeño operativo y patrones de movilidad para tomar decisiones oportunas basadas en datos.
+
+La organización busca reducir costos operativos, mejorar la asignación de recursos y aumentar la eficiencia mediante indicadores confiables generados automáticamente.
+
+### Puntos de dolor actuales
+Los datos de viajes se encuentran almacenados en diferentes fuentes (archivos CSV, sistemas operacionales o bases de datos aisladas), dificultando su integración.
+Los reportes se elaboran manualmente, consumiendo tiempo del personal y generando riesgo de errores.
+No existe una visión consolidada del negocio para analizar ingresos, cantidad de viajes, zonas de mayor demanda y comportamiento de usuarios.
+Las decisiones operativas se realizan principalmente por experiencia y no mediante evidencia histórica.
+Existe dificultad para identificar patrones como horarios críticos, rutas poco eficientes o zonas con baja rentabilidad.
+El crecimiento del volumen de datos hace que los procesos tradicionales de análisis sean lentos y poco escalables.
+
+### Restricciones técnicas
+Los datos actuales presentan diferentes formatos y estructuras, requiriendo procesos de limpieza y transformación antes del análisis.
+La infraestructura existente tiene limitaciones para almacenar y procesar grandes volúmenes de información.
+Se necesita una arquitectura escalable que permita aumentar la cantidad de datos sin afectar el rendimiento.
+Se requiere garantizar la calidad, consistencia y disponibilidad de los datos utilizados para los reportes.
+El acceso a la información debe mantenerse controlado para proteger datos operativos sensibles.
+La solución debe minimizar procesos manuales y permitir actualizaciones automáticas de los indicadores.
+
+### Requisitos candidatos
+#### Requisitos funcionales
+- Integrar datos históricos de viajes provenientes de diferentes fuentes.
+- Implementar procesos ETL automatizados para extracción, transformación y carga de información.
+- Construir un modelo dimensional que facilite el análisis empresarial.
+- Almacenar la información procesada en un Data Warehouse.
+- Generar dashboards interactivos para seguimiento de indicadores clave.
+- Permitir análisis de: volumen de viajes, ingresos generados, distancia recorrida, comportamiento por horarios,zonas de origen y destino, métodos de pago.
+#### Requisitos no funcionales
+- Escalabilidad para manejar crecimiento progresivo de datos.
+- Alta disponibilidad de la información analítica.
+- Seguridad mediante control de accesos y gestión de permisos.
+- Automatización del procesamiento de datos.
+- Buen rendimiento en consultas analíticas.
+- Capacidad de integración futura con nuevas fuentes de datos
+
+<img src="docs/uber_looker2.png">
+
+  
 ## Referencias
 
 - Video tutorial original: https://www.youtube.com/watch?v=WpQECq5Hx9g
-- Repo base del proyecto: https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project
 - Documentación de Mage: https://docs.mage.ai
 - Dataset TLC NYC: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
