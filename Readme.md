@@ -14,7 +14,7 @@ Proyecto de ingeniería de datos basado en el tutorial de Darshil Parmar. Proces
 
 - **Fuente:** TLC Trip Record Data — Yellow Taxi, marzo 2016
 - **Archivo:** `uber_data.csv` (100.000 filas, 19 columnas)
-- **Repo original:** https://github.com/darshilparmar/uber-etl-pipeline-data-engineering-project
+- **Repo original:** https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
 ---
 
