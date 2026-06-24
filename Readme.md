@@ -1,4 +1,8 @@
 # Uber Data Engineering Project
+## INTEGRANTES
+- MELBIS CHINO HUAYCANI
+- DARWIN RIGOBERTO MAMANI QUISPE
+- MILTON HIROSHI TACO AVILES
 ### End-to-End ETL Pipeline con GCP, Mage, BigQuery y Looker Studio
 <img src="docs/Cover.png">
 
