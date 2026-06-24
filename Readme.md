@@ -3,13 +3,12 @@
 
 Proyecto de ingeniería de datos basado en el tutorial de Darshil Parmar. Procesa datos de viajes de taxi de NYC (Yellow Taxi, marzo 2016) aplicando un modelo dimensional (esquema en estrella) para análisis en BigQuery y visualización en Looker Studio.
 
----
+
 
 ## Arquitectura general
 
-<img src="Arquitectura.png">
+<img src="docs/Arquitectura.png">
 
----
 
 ## Dataset
 
